@@ -4,6 +4,10 @@
   "description": "reusable login component",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --config configs/webpack.dev.config.js --progress --colors --hot --inline",
+    "build": "npm run build:prod",
+    "build:dev": "cross-env NODE_ENV=dev webpack --config configs/webpack.dev.config.js --progress --profile --bail",
+    "build:prod": "cross-env NODE_ENV=prod webpack --config configs/webpack.prod.config.js --progress --profile --bail",
     "test": "test"
   },
   "repository": {
@@ -15,5 +19,42 @@
   "bugs": {
     "url": "https://github.com/elsaywang/login-component/issues"
   },
-  "homepage": "https://github.com/elsaywang/login-component#readme"
+  "homepage": "https://github.com/elsaywang/login-component#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bootstrap": "^3.3.7",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-webpack-alias",
+        {
+          "config": "configs/webpack.js"
+        }
+      ]
+    ]
+  }
 }
