@@ -1,6 +1,6 @@
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-const Merge = require( 'webpack-merge' );
-const CommonConfig = require( './webpack.common.js' );
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const Merge = require('webpack-merge');
+const CommonConfig = require('./webpack.common.js');
 module.exports = Merge(CommonConfig, {
 	module: {
 		rules: [
@@ -19,12 +19,13 @@ module.exports = Merge(CommonConfig, {
 							options: {
 								sourceMap: true
 							}
-						}
+						},
 					]
 				})
 			}
 		]
 	},
+	plugins: [new ExtractTextPlugin('./styles/index.scss')],
 	// webpack-dev-server specfic
 	devServer: {
 		disableHostCheck: true,

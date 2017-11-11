@@ -2,7 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const SRC_DIR = path.join(__dirname, '..', 'src'),
-	DIST_DIR = path.join(__dirname, '..', 'dist');
+	//SASS_DIR = path.join(__dirname,'..','styles'),
+	DIST_DIR = path.join(__dirname, '..', 'dist'),
+	SASS_DIST_FILE = path.join(DIST_DIR,"bundle.scss");
+	console.log(SASS_DIST_FILE);
 module.exports = {
 	entry: [path.join(SRC_DIR, "index.js")],
 	output: {
