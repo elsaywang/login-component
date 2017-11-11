@@ -1,0 +1,19 @@
+{
+  "name": "login-component",
+  "version": "1.0.0",
+  "description": "reusable login component",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsaywang/login-component.git"
+  },
+  "author": "Elsa Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsaywang/login-component/issues"
+  },
+  "homepage": "https://github.com/elsaywang/login-component#readme"
+}
