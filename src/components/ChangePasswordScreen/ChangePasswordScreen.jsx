@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import _ from 'underscore';
 import Icon from '../Icon/Icon';
 import SignInPrompt from '../SignInPrompt/SignInPrompt';
+import Input from '../Input/Input';
 
 class ChangePasswordScreen extends React.Component {
 	static propTypes = {
-		store: PropTypes.object
+		//store: PropTypes.object
 	}
 
 	constructor(props) {
@@ -18,8 +19,9 @@ class ChangePasswordScreen extends React.Component {
     }
 	}
 
-	handleChange = (e) => {}
-
+  handlePasswordInput = (e) => {}
+  //isConfirmedPassword = ()=>{}
+  handleConfirmPasswordInput = () =>{}
 	handleSubmit = (e) => {
 		e.preventDefault();
 	}
@@ -31,26 +33,26 @@ class ChangePasswordScreen extends React.Component {
 			<SignInPrompt/>
 			<form onSubmit={this.saveAndContinue}>
 				<Input
-          text="Old Password"
+          text="New Password"
           type="password"
           ref="password"
+          value={this.state.passsword}
           validator="true"
           minCharacters="7"
           requireCapitals="1"
           requireNumbers="1"
           forbiddenWords={this.state.forbiddenWords}
-          value={this.state.passsword}
-          emptyMessage="Password is invalid"
+          emptymessage="Password is invalid"
           onChange={this.handlePasswordInput}/>
 				<Input
-          text="New password"
+          text="Confirm password"
           ref="passwordConfirm"
           type="password"
-          validate={this.isConfirmedPassword}
           value={this.state.confirmPassword}
+          validate={this.isConfirmedPassword}
           onChange={this.handleConfirmPasswordInput}
-          emptyMessage="Please confirm your password"
-          errorMessage="Passwords don't match"/>
+          emptymessage="Please confirm your password"
+          errormessage="Passwords don't match"/>
 				<button type="submit" className="btn btn-primary btn-lg">
 					Change Password
 				</button>

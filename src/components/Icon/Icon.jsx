@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Icon = props => {
-	const type = props.type;
+	const type = props.iconType;
 	switch (type) {
 		case 'circle_error':
 			return (<svg viewBox="0 0 20 20">
@@ -41,7 +41,7 @@ const Icon = props => {
 };
 
 Icon.propTypes = {
-	type: PropTypes.string.isRequired
+	iconType: PropTypes.string.isRequired
 };
 
 export default Icon;

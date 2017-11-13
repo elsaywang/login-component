@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import _ from 'underscore';
 
-class InputError extends React.Component {
+export default class InputError extends React.Component {
 	static propTypes = {
 		errorMessage: PropTypes.string,
 		visible: PropTypes.bool
@@ -13,7 +14,7 @@ class InputError extends React.Component {
 			message: 'Input is invalid'
 		}
 	}
-  
+
 	render() {
 		let errorClass = classNames({
 			'error_container': true,
