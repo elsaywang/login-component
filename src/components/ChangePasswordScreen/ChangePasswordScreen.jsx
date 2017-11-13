@@ -37,11 +37,11 @@ class ChangePasswordScreen extends React.Component {
           type="password"
           ref="password"
           value={this.state.passsword}
-          validator="true"
-          minCharacters="7"
-          requireCapitals="1"
-          requireNumbers="1"
-          forbiddenWords={this.state.forbiddenWords}
+          validator={true}
+          mincharacters={7}
+          requirecapitals={1}
+          requirenumbers={1}
+          forbiddenwords={this.state.forbiddenWords}
           emptymessage="Password is invalid"
           onChange={this.handlePasswordInput}/>
 				<Input
