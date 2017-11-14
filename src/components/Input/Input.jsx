@@ -15,6 +15,7 @@ class Input extends React.Component {
     onChange: PropTypes.func.isRequired,
     minCharacters: PropTypes.number,
     requireCapitals: PropTypes.number,
+    requireLowercase: PropTypes.number,
     requireNumbers: PropTypes.number,
     specialCharacters: PropTypes.array,
     emptyMessage: PropTypes.string,
@@ -36,11 +37,13 @@ class Input extends React.Component {
       type: this.props.type,
       minCharacters: this.props.minCharacters,
       requireCapitals: this.props.requireCapitals,
+      requireLowercase: this.props.requireLowercase,
       requireNumbers: this.props.requireNumbers,
       specialCharacters: this.props.specialCharacters,
       isValidatorValid: {
         minChars: false,
         capitalLetters: false,
+        lowercaseLetters:false,
         numbers: false,
         words: false,
         all: false
@@ -142,6 +145,9 @@ class Input extends React.Component {
       capitalLetters: !_.isEmpty(value)
         ? this.countCapitals(value)
         : false,
+      lowercaseLetters: !_.isEmpty(value)
+        ? this.countLowercases(value)
+        : false,
       numbers: !_.isEmpty(value)
         ? this.countNumbers(value) > 0
         : false,
@@ -159,6 +165,10 @@ class Input extends React.Component {
     return str.replace(/[^A-Z]/g, "").length;
   }
 
+  countLowercases = (value) => {
+    let str = value;
+    return str.replace(/[^a-z]/g, "").length;
+  }
   countNumbers = (value) => {
     return /\d/.test(value);
   }
@@ -185,6 +195,7 @@ class Input extends React.Component {
 					specialCharacters={this.state.specialCharacters}
 					minCharacters={this.props.minCharacters}
 					requireCapitals={this.props.requireCapitals}
+          requireLowercase={this.props.requireLowercase}
 					requireNumbers={this.props.requireNumbers}/>
       : null)
   }
@@ -196,6 +207,7 @@ class Input extends React.Component {
       validate,
       requireNumbers,
       requireCapitals,
+      requireLowercase,
       minCharacters,
       specialCharacters,
       ...inputProps

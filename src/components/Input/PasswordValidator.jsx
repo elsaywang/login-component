@@ -11,8 +11,10 @@ export default class PasswordValidator extends React.Component {
     name: PropTypes.string,
     minCharacters: PropTypes.number,
     requireCapitals: PropTypes.number,
+    requireLowercase: PropTypes.number,
     requireNumbers: PropTypes.number,
     specialCharacters: PropTypes.array,
+    validData: PropTypes.object,
     errorMessage: PropTypes.string
   }
 
@@ -22,6 +24,7 @@ export default class PasswordValidator extends React.Component {
       value: '',
       minCharacters: this.props.minCharacters,
       requireCapitals: this.props.requireCapitals,
+      requireLowercase: this.props.requireLowercase,
       requireNumbers: this.props.requireNumbers,
       specialCharacters: this.props.specialCharacters,
       name: this.props.name
@@ -40,10 +43,10 @@ export default class PasswordValidator extends React.Component {
       this.props.valid
       ? <h4 className="validator_title valid">
         {this.props.name}
-        IS OK
+        is valid
       </h4>
       : <h4 className="validator_title invalid">
-        {this.props.name} Rules
+        Your password must contain:
       </h4>)
   }
 	render() {
@@ -69,19 +72,23 @@ export default class PasswordValidator extends React.Component {
             <li className={classNames({'valid': this.props.validData.capitalLetters})}>
               <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
               <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
-              <span className="error_message">Contains at least {this.state.requireCapitals} capital letter</span>
+              <span className="error_message">{this.state.requireCapitals} capital letter</span>
             </li>
-
+            <li className={classNames({'valid': this.props.validData.lowercaseLetters})}>
+              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
+              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+              <span className="error_message">{this.state.requireLowercase} lower letter</span>
+            </li>
             <li className={classNames({'valid': this.props.validData.numbers})}>
               <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
               <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
-              <span className="error_message">Contains at least {this.state.requireNumbers} number</span>
+              <span className="error_message">{this.state.requireNumbers} number</span>
             </li>
 
             <li className={classNames({'valid': this.props.validData.words})}>
               <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
               <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
-              <span className="error_message">Contains at least {this.specialCharacters()}</span>
+              <span className="error_message">{this.specialCharacters()}</span>
             </li>
           </ul>
         </div>

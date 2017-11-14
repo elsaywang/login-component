@@ -84,6 +84,7 @@ class ChangePasswordScreen extends React.Component {
           validator
           minCharacters={7}
           requireCapitals={1}
+          requireLowercase={1}
           requireNumbers={1}
           specialCharacters={this.state.specialCharacters}
           emptyMessage="Password is invalid"
