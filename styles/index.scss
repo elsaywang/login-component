@@ -1,17 +1,12 @@
-@import './_variables.scss';
+@import './setup/_variables.scss';
 @import './App/App.scss';
 @import './ChangePasswordScreen/ChangePasswordScreen.scss';
 @import './Icon/Icon.scss';
 @import './Input/Input.scss';
 @import './Input/Password.scss';
+@import './Header/Header.scss';
+
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
-    color: $dark;
-}
-input{
-    min-width: 200px;
-    margin-right: 10px;
+
 }

@@ -70,8 +70,10 @@ class ChangePasswordScreen extends React.Component {
   }
 
 	render() {
-		return (<div className="screen">
-			<SignInPrompt/>
+		return (<div className="container">
+      <div className="panel panel-default">
+      <div className="panel-body">
+          <SignInPrompt/>
 			<form onSubmit={this.saveAndContinue}>
 				<Input
 					text="Old Password"
@@ -108,6 +110,8 @@ class ChangePasswordScreen extends React.Component {
 					Change Password
 				</button>
 			</form>
+    </div>
+    </div>
 		</div>)
 	}
 }
