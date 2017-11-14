@@ -13,7 +13,7 @@ class ChangePasswordScreen extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
-			oldPasssword:'',
+			oldPassword:'',
       newPasssword:'',
       confirmPassword:'',
 			specialCharacters: ['!','@',']','#','$','%','^','&','*']
@@ -26,7 +26,7 @@ class ChangePasswordScreen extends React.Component {
     }
     this.refs.passwordConfirm.hideError();
     this.setState({
-      password: event.target.value
+      newPasssword: event.target.value
     });
 	}
 
@@ -38,15 +38,25 @@ class ChangePasswordScreen extends React.Component {
 
 	handleOldPasswordInput = (event) =>{
 		this.setState({
-      oldPasssword: event.target.value
+      oldPassword: event.target.value
     });
 	}
 
-	handleSubmit = (e) => {
-		e.preventDefault();
-	}
+	saveAndContinue = (event) => {
+		event.preventDefault();
 
-	saveAndContinue = () => {}
+    let canProceed = this.refs.oldPassword.isValid()
+        && this.refs.newPasssword.isValid()
+        && this.refs.passwordConfirm.isValid();
+
+    if (canProceed) {
+      alert('Thanks.');
+    } else {
+			this.refs.oldPassword.isValid();
+			this.refs.newPasssword.isValid();
+			this.refs.passwordConfirm.isValid();
+    }
+	}
 
 	render() {
 		return (<div className="screen">
