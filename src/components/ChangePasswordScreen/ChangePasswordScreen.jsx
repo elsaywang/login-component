@@ -65,6 +65,10 @@ class ChangePasswordScreen extends React.Component {
     return (event == this.state.newPasssword)
   }
 
+  isOldPassword = (event) => {
+    return event
+  }
+
 	render() {
 		return (<div className="screen">
 			<SignInPrompt/>
@@ -74,7 +78,9 @@ class ChangePasswordScreen extends React.Component {
 					type="password"
 					ref="oldPassword"
 					value={this.state.oldPasssword}
-					emptymessage="Please type old password"
+          validate={this.isOldPassword}
+					emptyMessage="Please type old password"
+          errorMessage="Old password can't be empty"
 					onChange={this.handleOldPasswordInput}/>
 				<Input
           text="New Password"
