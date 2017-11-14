@@ -15,7 +15,7 @@ class Input extends React.Component {
 		minCharacters: PropTypes.number,
 		requireCapitals: PropTypes.number,
 		requireNumbers: PropTypes.number,
-		forbiddenWords: PropTypes.bool,
+		specialCharacters: PropTypes.array,
 		emptyMessage: PropTypes.string,
 		errorMessage: PropTypes.string
 	}
@@ -36,7 +36,7 @@ class Input extends React.Component {
 			minCharacters: this.props.minCharacters,
 			requireCapitals: this.props.requireCapitals,
 			requireNumbers: this.props.requireNumbers,
-			forbiddenWords: this.props.forbiddenWords,
+			specialCharacters: this.props.specialCharacters,
 			isValidatorValid: {
 				minChars: false,
 				capitalLetters: false,
@@ -162,7 +162,7 @@ class Input extends React.Component {
 	}
 
 	checkWords = (value) => {
-		return _.some(this.state.forbiddenWords, (word) => {
+		return _.some(this.state.specialCharacters, (word) => {
 			let matched = (word === value)
 				? true
 				: "";

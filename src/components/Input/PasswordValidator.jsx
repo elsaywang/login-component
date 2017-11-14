@@ -13,7 +13,7 @@ class PasswordValidator extends React.Component {
   		minCharacters: PropTypes.number,
   		requireCapitals: PropTypes.number,
   		requireNumbers: PropTypes.number,
-  		forbiddenWords: PropTypes.bool,
+  		specialCharacters: PropTypes.bool,
   		errorMessage: PropTypes.string
   	}
 	}

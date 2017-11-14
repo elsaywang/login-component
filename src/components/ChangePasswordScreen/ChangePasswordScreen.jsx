@@ -13,9 +13,10 @@ class ChangePasswordScreen extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
-      forbiddenWords:false,
-      passsword:'',
-      confirmPassword:''
+			oldPassword:'',
+      newPasssword:'',
+      confirmPassword:'',
+			specialCharacters: ['!','@',']','#','$','%','^','&','*']
     }
 	}
 
@@ -36,18 +37,18 @@ class ChangePasswordScreen extends React.Component {
           text="New Password"
           type="password"
           ref="password"
-          value={this.state.passsword}
-          validator={true}
+          value={this.state.newPasssword}
+          validator
           mincharacters={7}
           requirecapitals={1}
           requirenumbers={1}
-          forbiddenwords={this.state.forbiddenWords}
+          specialcharacters={this.state.specialCharacters}
           emptymessage="Password is invalid"
           onChange={this.handlePasswordInput}/>
 				<Input
           text="Confirm password"
-          ref="passwordConfirm"
           type="password"
+					ref="passwordConfirm"
           value={this.state.confirmPassword}
           validate={this.isConfirmedPassword}
           onChange={this.handleConfirmPasswordInput}
