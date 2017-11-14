@@ -168,7 +168,6 @@ class Input extends React.Component {
       let matched = (value.includes(word))
         ? true
         : "";
-      console.log(word,value,matched);
       return matched
     })
   }
