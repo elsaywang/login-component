@@ -49,12 +49,16 @@ export default class PasswordValidator extends React.Component {
         Your password must contain:
       </h4>)
   }
+  getIcon = (tProps)=>{
+    return classNames({'valid': tProps,'invalid': !tProps});
+  }
 	render() {
 		const validatorClass = classNames({
       'password_validator':   true,
       'visible':              this.props.visible,
       'invisible':            !this.props.visible
     });
+
 		return (
 			<div className={validatorClass}>
         <div className="validator_container">
@@ -63,31 +67,24 @@ export default class PasswordValidator extends React.Component {
 
           <ul className="rules_list">
 
-            <li className={classNames({'valid': this.props.validData.minChars})}>
-              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+            <li className={this.getIcon(this.props.validData.minChars)}>
+              {/*<i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
+              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>*/}
               <span className="error_message">{this.state.minCharacters} characters minimum</span>
             </li>
 
-            <li className={classNames({'valid': this.props.validData.capitalLetters})}>
-              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+            <li className={this.getIcon(this.props.validData.capitalLetters)}>
+              {/*<i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
+              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>*/}
               <span className="error_message">{this.state.requireCapitals} capital letter</span>
             </li>
-            <li className={classNames({'valid': this.props.validData.lowercaseLetters})}>
-              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+            <li className={this.getIcon(this.props.validData.lowercaseLetters)}>
               <span className="error_message">{this.state.requireLowercase} lower letter</span>
             </li>
-            <li className={classNames({'valid': this.props.validData.numbers})}>
-              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+            <li className={this.getIcon(this.props.validData.numbers)}>
               <span className="error_message">{this.state.requireNumbers} number</span>
             </li>
-
-            <li className={classNames({'valid': this.props.validData.words})}>
-              <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
+            <li className={this.getIcon(this.props.validData.words)}>
               <span className="error_message">{this.specialCharacters()}</span>
             </li>
           </ul>

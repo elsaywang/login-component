@@ -205,7 +205,7 @@ class Input extends React.Component {
 			<label className="control-label" htmlFor={this.props.text}>
 				{this.props.text}
 			</label>
-			<div class="input-group">
+			<div className="input-group">
 				<input {...inputProps} className="form-control" placeholder={this.props.placeholder} id={this.props.text} defaultValue={this.props.defaultValue} value={this.state.value} onChange={this.handleChange} onFocus={this.handleFocus} onBlur={this.handleBlur} autoComplete="off"/>
 				<InputError visible={this.state.errorVisible} errorMessage={this.state.errorMessage}/>
 				<div className="validationIcons">
