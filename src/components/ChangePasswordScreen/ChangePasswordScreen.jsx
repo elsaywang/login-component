@@ -21,7 +21,7 @@ class ChangePasswordScreen extends React.Component {
 	}
 
   handlePasswordInput = (event) => {
-		console.log(event.target.value);
+		//console.log(event.target.value);
 		if(!_.isEmpty(this.state.confirmPassword)){
       this.refs.passwordConfirm.isValid();
     }
@@ -32,14 +32,14 @@ class ChangePasswordScreen extends React.Component {
 	}
 
   handleConfirmPasswordInput = (event) =>{
-		console.log(event.target.value);
+		//console.log(event.target.value);
 		this.setState({
       confirmPassword: event.target.value
     });
 	}
 
 	handleOldPasswordInput = (event) =>{
-		console.log(event.target.value);
+		//console.log(event.target.value);
 		this.setState({
       oldPassword: event.target.value
     });
@@ -82,11 +82,11 @@ class ChangePasswordScreen extends React.Component {
           ref="newPasssword"
           value={this.state.newPasssword}
           validator
-          mincharacters={7}
-          requirecapitals={1}
-          requirenumbers={1}
-          specialcharacters={this.state.specialCharacters}
-          emptymessage="Password is invalid"
+          minCharacters={7}
+          requireCapitals={1}
+          requireNumbers={1}
+          specialCharacters={this.state.specialCharacters}
+          emptyMessage="Password is invalid"
           onChange={this.handlePasswordInput}/>
 				<Input
           text="Confirm password"
@@ -95,8 +95,8 @@ class ChangePasswordScreen extends React.Component {
           value={this.state.confirmPassword}
           validate={this.isConfirmedPassword}
           onChange={this.handleConfirmPasswordInput}
-          emptymessage="Please confirm your password"
-          errormessage="Passwords don't match"/>
+          emptyMessage="Please confirm your password"
+          errorMessage="Passwords don't match"/>
 				<button type="submit" className="btn btn-primary btn-lg">
 					Change Password
 				</button>
