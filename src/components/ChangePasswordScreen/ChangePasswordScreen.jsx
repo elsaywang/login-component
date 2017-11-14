@@ -70,7 +70,7 @@ class ChangePasswordScreen extends React.Component {
   }
 
 	render() {
-		return (<div className="container">
+		return (<div className="container screen">
       <div className="panel panel-default">
       <div className="panel-body">
           <SignInPrompt/>
