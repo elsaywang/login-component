@@ -53,7 +53,7 @@ class ChangePasswordScreen extends React.Component {
         && this.refs.passwordConfirm.isValid();
 
     if (canProceed) {
-      alert('Thanks.');
+      console.log('Thanks.');
     } else {
 			this.refs.oldPassword.isValid();
 			this.refs.newPasssword.isValid();
@@ -66,7 +66,7 @@ class ChangePasswordScreen extends React.Component {
   }
 
   isOldPassword = (event) => {
-    return event
+    return (event && this.state.newPasssword !== this.state.oldPassword)
   }
 
 	render() {
@@ -82,7 +82,7 @@ class ChangePasswordScreen extends React.Component {
 					value={this.state.oldPasssword}
           validate={this.isOldPassword}
 					emptyMessage="Please type old password"
-          errorMessage="Old password can't be empty"
+          errorMessage="New password must be different from old one"
 					onChange={this.handleOldPasswordInput}/>
 				<Input
           text="New Password"
