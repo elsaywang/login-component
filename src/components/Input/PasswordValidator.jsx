@@ -81,7 +81,7 @@ export default class PasswordValidator extends React.Component {
             <li className={classNames({'valid': this.props.validData.words})}>
               <i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
               <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>
-              <span className="error_message">Can't be {this.specialCharacters()}</span>
+              <span className="error_message">Contains at least {this.specialCharacters()}</span>
             </li>
           </ul>
         </div>

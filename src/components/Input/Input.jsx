@@ -146,7 +146,7 @@ class Input extends React.Component {
         ? this.countNumbers(value) > 0
         : false,
       words: !_.isEmpty(value)
-        ? !this.checkWords(value)
+        ? this.checkWords(value)
         : false
     }
     let allValid = (validData.minChars && validData.capitalLetters && validData.numbers && validData.words);
@@ -165,9 +165,10 @@ class Input extends React.Component {
 
   checkWords = (value) => {
     return _.some(this.state.specialCharacters, (word) => {
-      let matched = (word === value)
+      let matched = (value.includes(word))
         ? true
         : "";
+      console.log(word,value,matched);
       return matched
     })
   }
