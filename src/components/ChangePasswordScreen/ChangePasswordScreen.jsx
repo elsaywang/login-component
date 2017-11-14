@@ -13,16 +13,35 @@ class ChangePasswordScreen extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
-			oldPassword:'',
+			oldPasssword:'',
       newPasssword:'',
       confirmPassword:'',
 			specialCharacters: ['!','@',']','#','$','%','^','&','*']
     }
 	}
 
-  handlePasswordInput = (e) => {}
-  //isConfirmedPassword = ()=>{}
-  handleConfirmPasswordInput = () =>{}
+  handlePasswordInput = (event) => {
+		if(!_.isEmpty(this.state.confirmPassword)){
+      this.refs.passwordConfirm.isValid();
+    }
+    this.refs.passwordConfirm.hideError();
+    this.setState({
+      password: event.target.value
+    });
+	}
+
+  handleConfirmPasswordInput = (event) =>{
+		this.setState({
+      confirmPassword: event.target.value
+    });
+	}
+
+	handleOldPasswordInput = (event) =>{
+		this.setState({
+      oldPasssword: event.target.value
+    });
+	}
+
 	handleSubmit = (e) => {
 		e.preventDefault();
 	}
@@ -34,9 +53,16 @@ class ChangePasswordScreen extends React.Component {
 			<SignInPrompt/>
 			<form onSubmit={this.saveAndContinue}>
 				<Input
+					text="Old Password"
+					type="password"
+					ref="oldPassword"
+					value={this.state.oldPasssword}
+					emptymessage="Please type old password"
+					onChange={this.handleOldPasswordInput}/>
+				<Input
           text="New Password"
           type="password"
-          ref="password"
+          ref="newPasssword"
           value={this.state.newPasssword}
           validator
           mincharacters={7}
