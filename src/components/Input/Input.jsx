@@ -224,7 +224,7 @@ class Input extends React.Component {
           <Icon iconType="circle_tick"/>
         </i>
       </div>
-      {/* validator */}
+      {this.validatorContainer()}
     </div>)
   }
 }
