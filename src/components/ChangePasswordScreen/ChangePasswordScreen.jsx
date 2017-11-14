@@ -21,6 +21,7 @@ class ChangePasswordScreen extends React.Component {
 	}
 
   handlePasswordInput = (event) => {
+		console.log(event.target.value);
 		if(!_.isEmpty(this.state.confirmPassword)){
       this.refs.passwordConfirm.isValid();
     }
@@ -31,12 +32,14 @@ class ChangePasswordScreen extends React.Component {
 	}
 
   handleConfirmPasswordInput = (event) =>{
+		console.log(event.target.value);
 		this.setState({
       confirmPassword: event.target.value
     });
 	}
 
 	handleOldPasswordInput = (event) =>{
+		console.log(event.target.value);
 		this.setState({
       oldPassword: event.target.value
     });

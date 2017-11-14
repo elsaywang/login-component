@@ -10,7 +10,7 @@ class Input extends React.Component {
 		type: PropTypes.string.isRequired,
 		value: PropTypes.string,
 		validator: PropTypes.bool,
-		validate: PropTypes.string,
+		validate: PropTypes.func,
 		onChange: PropTypes.func.isRequired,
 		minCharacters: PropTypes.number,
 		requireCapitals: PropTypes.number,
@@ -171,12 +171,13 @@ class Input extends React.Component {
 	}
 
 render() {
+	const { validate, ...inputProps } = this.props;
 	return (
     <div className=''>
       <label className="input_label" htmlFor={this.props.text}>
 			     <span className="label_text">{this.props.text}</span>
 			 </label>
-       <input {...this.props}
+       <input {...inputProps}
          placeholder={this.props.placeholder}
          className="input"
          id={this.props.text}
