@@ -58,6 +58,10 @@ class ChangePasswordScreen extends React.Component {
     }
 	}
 
+	isConfirmedPassword = (event) => {
+    return (event == this.state.newPasssword)
+  }
+
 	render() {
 		return (<div className="screen">
 			<SignInPrompt/>
