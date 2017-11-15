@@ -1,3 +1,8 @@
 .error_msg{
+  margin-top: 5px;
   color: $orange;
+  span{
+    padding-left: 15px;
+    font-weight: bold;
+  }
 }
