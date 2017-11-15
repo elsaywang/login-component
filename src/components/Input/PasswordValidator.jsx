@@ -33,7 +33,7 @@ export default class PasswordValidator extends React.Component {
   specialCharacters = () => {
     return this.state.specialCharacters.map((w, i) => {
       return (<span key={i} className="bad_word">
-        "{w}"
+        {w}
       </span>)
     })
   }
@@ -42,8 +42,7 @@ export default class PasswordValidator extends React.Component {
     return (
       this.props.valid
       ? <h4 className="validator_title valid">
-        {this.props.name}
-        is valid
+        {this.props.name} is valid
       </h4>
       : <h4 className="validator_title invalid">
         Your password must contain:
@@ -61,7 +60,7 @@ export default class PasswordValidator extends React.Component {
 
 		return (
 			<div className={validatorClass}>
-        <div className="validator_container">
+        <div className="container-fluid">
 
           {this.validatorTitle()}
 
@@ -76,13 +75,13 @@ export default class PasswordValidator extends React.Component {
             <li className={this.getIcon(this.props.validData.capitalLetters)}>
               {/*<i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
               <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>*/}
-              <span className="error_message">{this.state.requireCapitals} capital letter</span>
+              <span className="error_message">at least {this.state.requireCapitals} capital letter</span>
             </li>
             <li className={this.getIcon(this.props.validData.lowercaseLetters)}>
-              <span className="error_message">{this.state.requireLowercase} lower letter</span>
+              <span className="error_message">at least {this.state.requireLowercase} lower letter</span>
             </li>
             <li className={this.getIcon(this.props.validData.numbers)}>
-              <span className="error_message">{this.state.requireNumbers} number</span>
+              <span className="error_message">at least {this.state.requireNumbers} number</span>
             </li>
             <li className={this.getIcon(this.props.validData.words)}>
               <span className="error_message">{this.specialCharacters()}</span>

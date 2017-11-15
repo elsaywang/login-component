@@ -16,7 +16,7 @@ const Header = (props) => {
 			<div className="collapse navbar-collapse">
 				<ul className="nav navbar-nav">
 					<li className="active">
-						<a href="#">| Private Bank SELECT</a>
+						<a href="#">&#9475; Private Bank SELECT</a>
 					</li>
 				</ul>
 				<ul className="nav navbar-nav navbar-right">
