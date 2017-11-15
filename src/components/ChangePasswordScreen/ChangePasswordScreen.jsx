@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
-import Icon from '../Icon/Icon';
+
 import SignInPrompt from '../SignInPrompt/SignInPrompt';
 import Input from '../Input/Input';
 
