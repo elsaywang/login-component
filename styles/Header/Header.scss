@@ -1,19 +1,22 @@
-.logo{
+.logo {
   height: 70px;
   width: 70px;
 }
-.logo-title{
+
+.logo-title {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  max-width:80px;
+  max-width: 80px;
   font-weight: bold;
-  color: $text-gray-blue
+  color: $text-gray-blue;
 }
-.sign-in{
+
+.sign-in {
   background: $white;
   margin-bottom: 5px;
   padding-left: 50px;
   padding-bottom: 10px;
-  p{
+
+  p {
     font-size: 14px;
   }
 }
