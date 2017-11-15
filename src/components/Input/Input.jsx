@@ -231,8 +231,9 @@ class Input extends React.Component {
           <i className="glyphicon glyphicon-eye-close form-control-feedback" >
           </i>
         </div>
+        {this.validatorContainer()}
       </div>
-      {this.validatorContainer()}
+
     </div>)
   }
 }
