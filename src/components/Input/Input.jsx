@@ -217,7 +217,7 @@ class Input extends React.Component {
       <label className="control-label" htmlFor={this.props.text}>
         {this.props.text}
       </label>
-      <div className="input-group">
+      <div className="input-group input-cutomized">
         <input {...inputProps}
           className="form-control"
           placeholder={this.props.placeholder}
