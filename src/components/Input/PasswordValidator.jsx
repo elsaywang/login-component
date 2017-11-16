@@ -40,12 +40,12 @@ export default class PasswordValidator extends React.Component {
   validatorTitle = () => {
     return (
       this.props.valid
-      ? <h4 className="validator_title valid">
+      ? <h6 className="validator_title valid">
         {this.props.name} is valid
-      </h4>
-      : <h4 className="validator_title invalid">
+      </h6>
+      : <h6 className="validator_title invalid">
         Your password must contain:
-      </h4>)
+      </h6>)
   }
   getIcon = (tProps)=>{
     return classNames({'valid': tProps,'invalid': !tProps});
