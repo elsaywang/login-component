@@ -5,9 +5,12 @@
 
 .logo-title {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  max-width: 80px;
-  font-weight: bold;
-  color: $text-gray-blue;
+  max-width: 200px;
+  //font-weight: bold;
+  span {
+    color: $black, font-weight: bold;
+  }
+  color: $text-dark-blue;
 }
 
 .sign-in {

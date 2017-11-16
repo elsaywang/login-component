@@ -19,16 +19,12 @@ const Header = (props) => {
             <div className="col-xs">
               <span className="col-xs-3">&#9475;
               </span>
-              <span>Private
+              <span>Private Bank
               </span>
             </div>
             <div className="col-xs">
 							<div className="col-xs-3"></div>
-							<div >Bank</div>
-						</div>
-            <div className="col-xs">
-							<div className="col-xs-3"></div>
-							<div>Select</div>
+							<div>SELECT</div>
 						</div>
           </li>
         </ul>
