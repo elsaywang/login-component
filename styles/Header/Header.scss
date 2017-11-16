@@ -16,9 +16,15 @@
   padding-left: 50px;
   padding-bottom: 10px;
 
+  h2 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 600;
+  }
+
   p {
-    font-size: 14px;
-    max-width: 60%;
-    margin: 0 0 5px 0
+    font-size: 13px;
+    max-width: 50%;
+    margin: 0 0 5px;
+    color: $text-dark-blue;
   }
 }
