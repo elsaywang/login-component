@@ -6,12 +6,12 @@
 .logo-title {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   max-width: 200px;
-  //font-weight: bold;
+  font-weight: bold;
   span {
     color: $black;
     font-weight: bold;
   }
-  color: $text-dark-blue;
+  color: $sidebar-text-color;
 }
 
 .sign-in {
