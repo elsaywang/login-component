@@ -228,7 +228,7 @@ class Input extends React.Component {
           autoComplete="off"/>
         <InputError visible={this.state.errorVisible} errorMessage={this.state.errorMessage}/>
         <div className="validationIcons">
-          <i className="glyphicon glyphicon-eye-close form-control-feedback" >
+          <i className="glyphicon glyphicon-eye-open form-control-feedback" >
           </i>
         </div>
         {this.validatorContainer()}

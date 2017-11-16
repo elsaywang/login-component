@@ -1,9 +1,9 @@
-.validationIcons{
-  svg {
-    height: 15px;
-    width: 15px;
+.validationIcons {
+  .glyphicon-eye-open {
+    color: $light-blue;
   }
 }
-.input-cutomized{
-  width: 60%
+
+.input-cutomized {
+  width: 60%;
 }
