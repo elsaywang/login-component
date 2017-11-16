@@ -60,30 +60,22 @@ export default class PasswordValidator extends React.Component {
 		return (
 			<div className={validatorClass}>
         <div className="container-fluid">
-
           {this.validatorTitle()}
-
           <ul className="rules_list">
-
             <li className={this.getIcon(this.props.validData.minChars)}>
-              {/*<i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>*/}
-              <span className="error_message">{this.state.minCharacters} characters minimum</span>
+              <span >{this.state.minCharacters} characters minimum</span>
             </li>
-
             <li className={this.getIcon(this.props.validData.capitalLetters)}>
-              {/*<i className="icon_valid"> <Icon iconType="circle_tick_filled"/> </i>
-              <i className="icon_invalid"> <Icon iconType="circle_error"/> </i>*/}
-              <span className="error_message">at least {this.state.requireCapitals} capital letter</span>
+              <span >at least {this.state.requireCapitals} capital letter</span>
             </li>
             <li className={this.getIcon(this.props.validData.lowercaseLetters)}>
-              <span className="error_message">at least {this.state.requireLowercase} lower letter</span>
+              <span >at least {this.state.requireLowercase} lower letter</span>
             </li>
             <li className={this.getIcon(this.props.validData.numbers)}>
-              <span className="error_message">at least {this.state.requireNumbers} number</span>
+              <span >at least {this.state.requireNumbers} number</span>
             </li>
             <li className={this.getIcon(this.props.validData.words)}>
-              <span className="error_message">{this.specialCharacters()}</span>
+              <span >{this.specialCharacters()}</span>
             </li>
           </ul>
         </div>
